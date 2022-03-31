@@ -1,17 +1,18 @@
 import numpy as np
 
+
 def VanderMatrix(xs):
     
     Np1 = xs.shape[0]
-    V = np.vander(xs)
-    M = np.zeros(V.shape)
+    V = np.ones((Np1,Np1))
     
+    for i in range(Np1):
+
+        for j in range(1,Np1):
+            V[i,j] = V[i,j-1]*xs[i]
     
-    for j in range(Np1):
-        
-        M[:,j] = V[:,Np1-j-1]
-        
-    return M
+    return V
+
 
 def MonoPolyEval(a_coeff,xx):  
     
