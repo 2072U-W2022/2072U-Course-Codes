@@ -25,11 +25,6 @@ def NewtonIteration(func, dfunc, x0, kMax, epsX, epsF):
         print("No convergence!")
     return x,err,res, k
 
-#def func(x):
-#    return (x-np.cos(x))*(x-np.cos(x))
-    
-#def dfunc(x):
-#    return 2*(x-np.cos(x))*(1+np.sin(x))
 
 def func(x):
     return np.exp(-x*x)-x
